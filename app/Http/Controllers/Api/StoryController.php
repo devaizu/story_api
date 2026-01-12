@@ -34,6 +34,7 @@ class StoryController extends Controller
     {
         $stories = $request->user()
             ->stories()
+            ->with('user')
             ->latest()
             ->paginate(10);
 
